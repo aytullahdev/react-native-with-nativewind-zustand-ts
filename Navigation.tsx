@@ -1,9 +1,12 @@
-import { Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/Home";
-
-const Stack = createNativeStackNavigator();
+import News from "./screens/News";
+export type RootStackParamList = {
+  About: undefined;
+  News: undefined;
+};
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function Navigation() {
   return (
@@ -14,6 +17,7 @@ export default function Navigation() {
         }}
       >
         <Stack.Screen name="About" component={HomeScreen} />
+        <Stack.Screen name="News" component={News} />
       </Stack.Navigator>
     </NavigationContainer>
   );

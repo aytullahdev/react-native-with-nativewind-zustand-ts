@@ -22,30 +22,31 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView>
-      <StatusBar barStyle="default" />
-      {/* Search Bar */}
-      <View className=" flex-row items-center space-x-2 px-4 pb-2 mt-2">
-        <View className="flex-row flex-1 items-center p-2 rounded-full border border-gray-300 ">
-          <IconSearch color={"gray"} />
-          <TextInput placeholder="Topic" className="ml-2 flex-1" />
+      <ScrollView>
+        <StatusBar barStyle="default" />
+        {/* Search Bar */}
+        <View className=" flex-row items-center space-x-2 px-4 pb-2 mt-2">
+          <View className="flex-row flex-1 items-center p-2 rounded-full border border-gray-300 ">
+            <IconSearch color={"gray"} />
+            <TextInput placeholder="Topic" className="ml-2 flex-1" />
+          </View>
+          <View className="p-1 rounded-full bg-red-500 ">
+            <IconAdjustments color={"white"} />
+          </View>
         </View>
-        <View className="p-1 rounded-full bg-red-500 ">
-          <IconAdjustments color={"white"} />
-        </View>
-      </View>
 
-      {/* Category */}
+        {/* Category */}
 
-      <ScrollView
-        showsHorizontalScrollIndicator
-        contentContainerStyle={{ paddingBottom: 20 }}
-      >
-        <Categories />
-      </ScrollView>
-      {/* Selected Featuer */}
+        <ScrollView
+          showsHorizontalScrollIndicator
+          contentContainerStyle={{ paddingBottom: 20 }}
+        >
+          <Categories />
+        </ScrollView>
+        {/* Selected Featuer */}
 
-      {/* Features */}
-      <ScrollView className="px-1">
+        {/* Features */}
+
         <View className="">
           <SelectedFeature />
         </View>
