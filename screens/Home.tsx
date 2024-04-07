@@ -16,10 +16,18 @@ import Categories from "../components/Categories";
 import FeaturedRow from "../components/FeaturedRow";
 import useCategoryStore from "../store/useCategoryStore";
 import SelectedFeature from "../components/SelectedFeature";
+import { useEffect } from "react";
+import { getCategory } from "../api";
 
 const HomeScreen = () => {
   const categories = useCategoryStore((state) => state.categories);
-
+  const setCategories = useCategoryStore((state) => state.setCategories);
+  useEffect(() => {
+    getCategory().then((data) => {
+      const titles = data.map((category) => category.title);
+      setCategories(titles);
+    });
+  }, []);
   return (
     <SafeAreaView>
       <StatusBar barStyle="default" />

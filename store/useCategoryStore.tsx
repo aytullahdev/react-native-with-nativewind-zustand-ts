@@ -1,4 +1,5 @@
 import { create } from "zustand";
+
 interface Article {
   category: string;
   title: string;
@@ -10,7 +11,9 @@ interface CategoryStore {
   selectedCategory: string;
   setSelectedCategory: (category: string) => void;
   getArticlesByCategory: (selectedCategory: string) => Article[];
+  setCategories: (categories: string[]) => void;
 }
+
 const useCategoryStore = create<CategoryStore>((set) => ({
   categories: [
     "Technology",
@@ -31,6 +34,7 @@ const useCategoryStore = create<CategoryStore>((set) => ({
     articles.filter(
       (article: Article) => article.category === selectedCategory
     ),
+  setCategories: (categories: string[]) => set((state) => ({ categories })),
 }));
 export default useCategoryStore;
 
