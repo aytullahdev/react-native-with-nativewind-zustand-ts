@@ -1,6 +1,6 @@
-import { Text, View } from "react-native";
-import React, { Component } from "react";
-import Animated, { FadeIn } from "react-native-reanimated";
+import React, { Component } from 'react';
+import { Text } from 'react-native';
+import Animated, { FadeIn } from 'react-native-reanimated';
 export default class Home extends Component {
   render() {
     return (
