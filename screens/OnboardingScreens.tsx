@@ -1,11 +1,12 @@
-import { useNavigation } from "@react-navigation/native";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import LottieView from "lottie-react-native";
 import { Dimensions, Image, SafeAreaView, Text, View } from "react-native";
 import Onboarding from "react-native-onboarding-swiper";
+import { RootStackParamList } from "../App";
 import { setItem } from "../utils/asyncStorage";
 const { width, height } = Dimensions.get("window");
-export default function OnBoardingScreens() {
-  const navigation = useNavigation();
+type Props = NativeStackScreenProps<RootStackParamList, "Onboard">;
+export default function OnBoardingScreens({ navigation }: Props) {
   return (
     <SafeAreaView className="w-full h-full">
       <View className="w-full h-full">
