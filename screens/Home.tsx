@@ -1,10 +1,11 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { SafeAreaView, Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import { RootStackParamList } from "../App";
+import { SafeView } from "./SafeView";
 type Props = NativeStackScreenProps<RootStackParamList, "Home">;
 export default function Home({ navigation }: Props) {
   return (
-    <SafeAreaView className="w-full h-full">
+    <SafeView>
       <View className="w-full h-full bg-green-500/30">
         <Text className="text-3xl text-center text-black uppercase mt-20 font-semibold">
           Welcome to Study Tracker
@@ -32,6 +33,6 @@ export default function Home({ navigation }: Props) {
           </TouchableOpacity>
         </View>
       </View>
-    </SafeAreaView>
+    </SafeView>
   );
 }
